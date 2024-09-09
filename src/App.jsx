@@ -20,9 +20,9 @@ function App() {
         const videoNumber = parseInt(videoName.match(/\d+/)[0]);
 
         if (videoNumber % 2 === 0) {
-          setResult('This video is Deepfaked!');
+          setResult('THIS VIDEO IS DEEPFAKED!');
         } else {
-          setResult('This video is not Deepfaked.');
+          setResult('THIS VIDEO IS NOT DEEPFAKED!');
         }
       } else {
         setResult('No video selected');
@@ -36,9 +36,13 @@ function App() {
       <UploadVideo onVideoUpload={handleVideoUpload} selectedVideo={selectedVideo} />
       <AnalyzeButton onAnalyze={analyzeVideo} />
       {result === 'loading' ? (
-        <div className="text-center mt-4">Analyzing...</div>
+        <div class="flex item-center justify-center m-5 flex-row gap-2">
+        <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce"></div>
+        <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:-.3s]"></div>
+        <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce [animation-delay:-.5s]"></div>
+      </div>
       ) : (
-        result && <div className="text-center mt-4 text-lg">{result}</div>
+        result && <div className="text-center mt-4 text-4xl font-semibold">{result}</div>
       )}
     </div>
   );
