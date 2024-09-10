@@ -1,15 +1,23 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 
 const AnalyzeButton = ({ onAnalyze }) => {
   return (
-    <div className="text-center mt-4">
-      <button 
+    <motion.div 
+      className="text-center mt-6"
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.6 }}
+    >
+      <motion.button 
         onClick={onAnalyze}
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg transition-transform transform hover:scale-105 active:scale-95"
       >
         Analyze Video
-      </button>
-    </div>
+      </motion.button>
+    </motion.div>
   );
 };
 
