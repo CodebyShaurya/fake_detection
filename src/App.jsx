@@ -32,9 +32,12 @@ function App() {
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold text-center mb-4">Deepfake Detection System</h1>
+      <div className='text-center'>
+      <h1 class="mb-4 text-3xl font-extrabold text-gray-900 dark:text-white md:text-5xl lg:text-6xl"><span class="text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-sky-400">Deepfake Detection </span> System</h1>
+      <p class="text-lg font-normal text-gray-500 lg:text-xl dark:text-gray-400"></p></div>
       <UploadVideo onVideoUpload={handleVideoUpload} selectedVideo={selectedVideo} />
       <AnalyzeButton onAnalyze={analyzeVideo} />
+      
       {result === 'loading' ? (
         <div class="flex item-center justify-center m-5 flex-row gap-2">
         <div class="w-4 h-4 rounded-full bg-blue-700 animate-bounce"></div>
